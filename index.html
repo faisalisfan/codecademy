@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors and Specificity</title>
+    <link rel="stylesheet" href="styles-ygini.css">
+</head>
+<body>
+    <header>
+        <h1>CSS Selectors and Specificity</h1>
+    </header>
+    <main>
+        <table>
+            <thead>
+                <colgroup span="4"></colgroup>
+                    <tr>
+                        <th><h2>Selector Name</h2></th>
+                        <th><h2>Selector Tag</h2></th>
+                        <th><h2>Description</h2></th>
+                        <th><h2>Example</h2></th>
+                    </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Class Selectors</td>
+                    <td><span class="code">.<em>class-name</em></span></td>
+                    <td>Class selectors are denoted with a period . followed by the class name. CSS classes can be reusable and applied to many elements.</td>
+                    <td>.h1</td>
+                </tr>
+                <tr>
+                    <td>ID Selectors</td>
+                    <td><span class="code">#<em>ID-name</em></span></td>
+                    <td>ID selectors are denoted with a hash sign # followed by the id name. CSS ID selectors should be unique and used to style only a single element.</td>
+                    <td>#misalkan</td>
+                </tr>
+                <tr>
+                    <td>Group Selectors</td>
+                    <td><span class="code"><em>class-name/ID-name</em> , <em>class-name/ID-name</em></span></td>
+                    <td>You can match multiple selectors to the same CSS rule, using a comma-separated list. In this example, the text for both .h1 and #misalkan is set to blue</td>
+                    <td>h1, #misalkan {<br>
+                        color: blue;
+                    <br>}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Chaining Selectors</td>
+                    <td><span class="code"><em>element name</em>.<em>class name</em></span></td>
+                    <td>In cases where there are HTML elements who also have class, a Chaining Selector can be use. *section-heading in example is assigned class</td>
+                    <td>h1.section-heading {<br>
+                        color: blue
+                    <br>}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Type Selectors</td>
+                    <td><span class="code"><em>element-name {
+                        }
+                    </em></span></td>
+                    <td>CSS type selectors are used to match all elements of a given type or tag name. Unlike for HTML syntax, we do not include the angle brackets when using type selectors for tag names. When using type selectors, elements are matched regardless of their nesting level in the HTML. *in example, the code select all &lt;h1&gt; element</td>
+                    <td>h1 {
+                    }
+                    </td>
+                </tr>
+                <tr>
+                    <td>CSS Class Selectors</td>
+                    <td><span class="code"><em>.class-name {
+                        color: blue
+                    }
+                    </em></span></td>
+                    <td>The CSS class selector matches elements based on the contents of their class attribute. For selecting elements having a-name as the value of the class attribute, a . needs to be prepended.</td>
+                    <td><em>*the tag also an example</em></td>
+                </tr>
+                <tr>
+                    <td>Selector Specificity</td>
+                    <td><span class="code"><em>element-name#ID-name {<br>
+                        color: blue;
+                    <br>}</em>
+                </span></td>
+                    <td>Specificity is a ranking system that is used when there are multiple conflicting property values that point to the same element. When determining which rule to apply, the selector with the highest specificity wins out. The most specific selector type is the ID selector, followed by class selectors, followed by type selectors.</td>
+                    <td>h1#header {<br>
+                        color: blue;
+                      <br>}<br> 
+                      <em>/* implemented */</em>
+                    <br><br>
+                      h1 {<br>
+                        color: red;
+                      <br>}<br> <em>/* Not implemented */</em>
+                    </td>
+                </tr>
+                <tr>
+                    <td>CSS ID Selectors</td>
+                    <td><span class="code"><em>#unique-id-name {
+                        color: blue;
+                    }
+                    </em></span></td>
+                    <td>The CSS ID selector matches elements based on the contents of their id attribute. The values of id attribute should be unique in the entire DOM. For selecting the element having job-title as the value of the id attribute, a # needs to be prepended.</td>
+                    <td>#job-title {
+                        color: blue;
+                    }
+                    </td>
+                </tr>
+                <tr>
+                    <td>CSS Descendant Selector</td>
+                    <td><span class="code"><em>parent-selector child selector
+                        {
+
+                        }
+                    </em></span></td>
+                    <td>The CSS descendant selector combinator is used to match elements that are descended from another matched selector. They are denoted by a single space between each selector and the descended selector. All matching elements are selected regardless of the nesting level in the HTML.</td>
+                    <td>div p { }
+ 
+                        section ol li { }</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>
